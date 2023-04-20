@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
 :root {
-    --wheel-font: 'Lato', 'Quicksand', sans-serif;
-    --wheel-size: 400px;
+    --wheel-font: 'Montserrat', sans-serif;
+    --wheel-size: 550px;
     --wheel-slice-spacing: 50px;
     --wheel-border-size: 5px;
-    --wheel-color: #dbbb07;
-    --neutral-color: black;
+    --wheel-color: #c2a140;
+    --neutral-color: rgb(20, 20, 20);
     --PI: 3.14159265358979;
     --nb-item: 0;
     --item-nb: 0;
@@ -14,6 +20,17 @@
     --reset-duration: 0.25s;
 }
 
+.responsive-text {
+    font-size: 45.96px;
+    margin: 2rem auto;
+    color: white;
+}
+
+.bg-god{
+    background-image: url('../../assets/images/bg-god.jpg');
+    background-size: cover;
+}
+
 /* Conteneur de la roue = cercle rose extérieur */
 .wheel-container {
     display: block;
@@ -21,10 +38,10 @@
     box-sizing: content-box;
     width: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
     height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
-    padding: 3px;
+    padding: 10px;
     margin: auto;
     background-color: var(--neutral-color);
-    border: solid var(--wheel-color) 3px;
+    border: solid var(--wheel-color) px;
     border-radius: 50%;
     user-select: none;
 }
@@ -46,12 +63,16 @@
 
 .wheel-container::before {
     right: 0px;
-    border-right-color: var(--wheel-color);
+    border-top: solid transparent 30px;
+    border-bottom: solid transparent 30px;
+    border-right: solid var(--wheel-color) 30px;
 }
 
 .wheel-container::after {
     right: -5px;
-    border-right-color: var(--neutral-color);
+    border-top: solid transparent 30px;
+    border-bottom: solid transparent 30px;
+    border-right: solid #c20707 30px;
 }
 
 /* Roue */
@@ -77,18 +98,25 @@
 }
 
 /* Centre de la roue = rond blanc au centre */
-.wheel::after {
+.center-circle {
     display: block;
     position: absolute;
     content: '';
+    background-image: url('../../assets/images/samples/GOD138_logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: var(--neutral-color);
-    width: 25px;
-    height: 25px;
+    background-attachment: fixed;
+    border: solid #c2a140 3px;
+    width: 120px;
+    height: 120px;
     z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+    background-size: 80px;
+    cursor: pointer;
 }
 
 /* Element sur la roue */
@@ -105,11 +133,12 @@
     transform: translateY(-50%) rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
 
     /* texte */
-    color: var(--neutral-color);
+    color: white;
     font-weight: bold;
     text-align: right;
     padding: 0 25px 0 50px;
     font-family: var(--wheel-font);
+    font-size: 20px;
 }
 
 /* Background de l'élément = triangle rose plus clair */
@@ -125,7 +154,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding-left: 0px;
-    opacity: 0.25;
+    opacity: 1;
 
     /*
       Largeur du triangle
@@ -144,26 +173,26 @@
 
 /*VOUCHER INPUT CSS */
 .coupon-card{
-    background: linear-gradient(135deg, #7158fe, #9d4de6);
+    background: linear-gradient(305deg, #28313B, #485461);
     color: #fff;
     text-align: center;
-    padding: 40px 80px;
+    padding: 2px 40px;
     border-radius: 15px;
     box-shadow: 0 10px 10px 0 rgba(0,0,0,0.15);
     position: relative;
-
+    width: 100%;
+    margin: auto;
 }
 .logo{
     width: 80px;
     border-radius: 8px;
     margin-bottom: 20px;
-
 }
 .coupon-card h3{
     font-size: 28px;
     font-weight: 400;
     line-height: 40px;
-
+    font-family: 'Montserrat', sans-serif;
 }
 .coupon-card p{
     font-size: 15px;
@@ -178,19 +207,25 @@
 }
 #cpnCode{
     border: 1px dashed #fff;
-    padding: 10px 60px;
-    border-right: 0;
+    padding: 10px;
 
 }
 #cpnBtn{
-    border: 1px solid #fff;
-    background: #fff;
+    border-radius: 10px;
+    margin-left: 20px;
+    background: #f4dfa4;
     padding: 10px 20px;
-    color: #7158fe;
+    color: #a0750b;
     cursor: pointer;
 }
+#cpnBtn:hover{
+    background: #a0750b;
+    color: #f4dfa4;
+}
+
 .circle1, .circle2{
-    background: #F2EDF3;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -205,4 +240,133 @@
 .circle2{
     right: -25px;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 479px){
+    /* INI UNTUK WHEEL */
+    :root{
+        --wheel-size: 270px;
+    }
+
+    .wheel::after {
+        width: 75px;
+        height: 75px;
+        background-size: 60px;
+    }
+
+    .wheel-item {
+        font-size: 0.7rem;
+    }
+
+    .responsive-text {
+        font-size: 24.96px;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        margin-right: -45px;
+    }
+
+    .wheel-container::before {
+        right: 0px;
+        border-top: solid transparent 20px;
+        border-bottom: solid transparent 20px;
+        border-right: solid var(--wheel-color) 20px;
+    }
+
+    .wheel-container::after {
+        right: -5px;
+        border-top: solid transparent 20px;
+        border-bottom: solid transparent 20px;
+        border-right: solid #c20707 20px;
+    }
+
+    .center-circle {
+        width: 80px;
+        height: 80px;
+        background-size: 55px;
+    }
+
+    /* INI UNTUK CARD */
+    .coupon-card{
+        padding: 2px 20px;
+        border-radius: 15px;
+        width: 300px;
+        position: inherit;
+        margin: 30px auto 0;
+    }
+
+    .logo{
+        width: 20px;
+        height: auto;
+        margin-right: -10px;
+    }
+
+    .circle1, .circle2{
+        width: 30px;
+        height: 30px;
+    }
+
+    .circle1{
+        left: -15px;
+    }
+    .circle2{
+        right: -15px;
+    }
+
+    .coupon-card p{
+        font-size: 12px;
+    }
+
+    #cpnCode{
+        padding: 5px;
+    }
+
+    #cpnBtn{
+        margin-left: 10px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .coupon-card h3{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    /* INI UNTUK WHEEL */
+    .wheel-container {
+        margin-left: -65px;
+    }
+
+    .coupon-card{
+        padding: 2px 40px;
+        border-radius: 15px;
+        width: 450px;
+        position: inherit;
+    }
+
+    .coupon-card h3{
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+    .circle1, .circle2{
+        width: 40px;
+        height: 40px;
+    }
+
+    .circle1{
+        left: -20px;
+    }
+    .circle2{
+        right: -20px;
+    }
+
+    .responsive-text {
+        margin-left: 40px;
+    }
+}
+
+
 

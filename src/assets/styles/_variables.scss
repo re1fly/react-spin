@@ -41,7 +41,7 @@ $colors: (
 
 
 $theme-colors: (
-  primary:         #b66dff,
+  primary:         #a2790d,
   secondary:       #d8d8d8,
   success:         #1bcfb4,
   info:            #198ae3,
@@ -52,7 +52,7 @@ $theme-colors: (
 );
 
 $theme-gradient-colors: (
-  primary:         linear-gradient(to right, #da8cff, #9a55ff),
+  primary:         linear-gradient(to right, #a2790d, #FFCC00),
   secondary:       linear-gradient(to right, #e7ebf0, #868e96),
   success:         linear-gradient(to right, #84d9d2, #07cdae),
   info:            linear-gradient(to right, #90caf9, #047edf 99%),
@@ -66,7 +66,7 @@ $theme-gradient-colors: (
 ////////// COLOR SYSTEM //////////
 
 ////////// COLOR VARIABLES //////////
-$content-bg: #f2edf3;
+$content-bg: #F9F9FB;
 $footer-bg: $content-bg;
 $footer-color: color(dark);
 $border-color: #ebedf2;

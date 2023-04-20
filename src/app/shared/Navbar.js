@@ -14,7 +14,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <Link className="navbar-brand brand-logo" to="/"><img src={require('../../assets/images/logo.svg')} alt="logo" /></Link>
+          <Link className="navbar-brand brand-logo h-100" to="/"><img src={require('../../assets/images/samples/GOD138_logo.png')} alt="logo" /></Link>
           <Link className="navbar-brand brand-logo-mini" to="/"><img src={require('../../assets/images/logo-mini.svg')} alt="logo" /></Link>
         </div>
         <div className="navbar-menu-wrapper d-flex align-items-stretch">
@@ -40,23 +40,23 @@ class Navbar extends Component {
                     <span className="availability-status online"></span>
                   </div>
                   <div className="nav-profile-text">
-                    <p className="mb-1 text-black"><Trans>David Greymaax</Trans></p>
+                    <p className="mb-1 text-black text-capitalize"><Trans>{localStorage.getItem('name')}</Trans></p>
                   </div>
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu className="navbar-dropdown">
-                  <Dropdown.Item href="!#" onClick={evt =>evt.preventDefault()}>
-                    <i className="mdi mdi-cached mr-2 text-success"></i>
-                    <Trans>Activity Log</Trans>
-                  </Dropdown.Item>
+                  {/*<Dropdown.Item href="!#" onClick={evt =>evt.preventDefault()}>*/}
+                  {/*  <i className="mdi mdi-cached mr-2 text-success"></i>*/}
+                  {/*  <Trans>Activity Log</Trans>*/}
+                  {/*</Dropdown.Item>*/}
                   <Dropdown.Item href="!#" onClick={evt =>evt.preventDefault()}>
                     <i className="mdi mdi-logout mr-2 text-primary"></i>
-                    <Trans>Signout</Trans>
+                    <Link to="/user-pages/login"> <Trans>Signout</Trans></Link>
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </li>
-            <li className="nav-item">
+            {/*<li className="nav-item">
               <Dropdown alignRight>
                 <Dropdown.Toggle className="nav-link count-indicator">
                   <i className="mdi mdi-email-outline"></i>
@@ -170,11 +170,11 @@ class Navbar extends Component {
               <button type="button" className="nav-link border-0" onClick={this.toggleRightSidebar} >
                 <i className="mdi mdi-format-line-spacing"></i>
               </button>
-            </li>
+            </li>*/}
           </ul>
-          <button className="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" onClick={this.toggleOffcanvas}>
-            <span className="mdi mdi-menu"></span>
-          </button>
+          {/*<button className="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" onClick={this.toggleOffcanvas}>*/}
+          {/*  <span className="mdi mdi-menu"></span>*/}
+          {/*</button>*/}
         </div>
       </nav>
     );

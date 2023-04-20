@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@mdi/font": "^4.2.95",
+    "antd": "^5.1.7",
     "axios": "^1.2.6",
     "bootstrap": "^4.3.1",
     "bosket": "^0.2.3",
@@ -57,6 +58,7 @@
     "react-treebeard": "^3.2.4",
     "react-trello": "^2.2.3",
     "sass": "^1.57.1",
+    "sweetalert2": "^11.7.1",
     "sweetalert2-react": "^0.8.3"
   },
   "scripts": {
