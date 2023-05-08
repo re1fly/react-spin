@@ -87,20 +87,20 @@ class Sidebar extends Component {
                   <i className="mdi mdi-ticket menu-icon"></i>
                 </Link>
               </li>
-              <li className={ this.isPathActive('/user-pages') ? 'nav-item active' : 'nav-item' }>
-                <div className={ this.state.userPagesMenuOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('userPagesMenuOpen') } data-toggle="collapse">
-                  <span className="menu-title"><Trans>User Pages</Trans></span>
-                  <i className="menu-arrow"></i>
-                  <i className="mdi mdi-lock menu-icon"></i>
-                </div>
-                <Collapse in={ this.state.userPagesMenuOpen }>
-                  <ul className="nav flex-column sub-menu">
-                    <li className="nav-item"> <Link className={ this.isPathActive('/user-pages/login') ? 'nav-link active' : 'nav-link' } to="/user-pages/login"><Trans>Login</Trans></Link></li>
-                    <li className="nav-item"> <Link className={ this.isPathActive('/user-pages/register-1') ? 'nav-link active' : 'nav-link' } to="/user-pages/register-1"><Trans>Register</Trans></Link></li>
-                    <li className="nav-item"> <Link className={ this.isPathActive('/user-pages/lockscreeen') ? 'nav-link active' : 'nav-link' } to="/user-pages/spinwheel"><Trans>SpinWheel</Trans></Link></li>
-                  </ul>
-                </Collapse>
-              </li>
+              {/*<li className={ this.isPathActive('/user-pages') ? 'nav-item active' : 'nav-item' }>*/}
+              {/*  <div className={ this.state.userPagesMenuOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('userPagesMenuOpen') } data-toggle="collapse">*/}
+              {/*    <span className="menu-title"><Trans>User Pages</Trans></span>*/}
+              {/*    <i className="menu-arrow"></i>*/}
+              {/*    <i className="mdi mdi-lock menu-icon"></i>*/}
+              {/*  </div>*/}
+              {/*  <Collapse in={ this.state.userPagesMenuOpen }>*/}
+              {/*    <ul className="nav flex-column sub-menu">*/}
+              {/*      <li className="nav-item"> <Link className={ this.isPathActive('/user-pages/login') ? 'nav-link active' : 'nav-link' } to="/user-pages/login"><Trans>Login</Trans></Link></li>*/}
+              {/*      <li className="nav-item"> <Link className={ this.isPathActive('/user-pages/register-1') ? 'nav-link active' : 'nav-link' } to="/user-pages/register-1"><Trans>Register</Trans></Link></li>*/}
+              {/*      <li className="nav-item"> <Link className={ this.isPathActive('/user-pages/lockscreeen') ? 'nav-link active' : 'nav-link' } to="/user-pages/spinwheel"><Trans>SpinWheel</Trans></Link></li>*/}
+              {/*    </ul>*/}
+              {/*  </Collapse>*/}
+              {/*</li>*/}
             </> :
                 <li className={ this.isPathActive('/operational/voucher') ? 'nav-item active' : 'nav-item' }>
                   <Link className="nav-link" to="/operational/voucher">
