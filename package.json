@@ -1,7 +1,7 @@
 {
   "name": "purple-react-free",
   "version": "1.1.0",
-  "homepage": "./",
+  "homepage": "https://react-spin.vercel.app/",
   "private": true,
   "dependencies": {
     "@mdi/font": "^4.2.95",
